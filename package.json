@@ -1,0 +1,14 @@
+{
+  "name": "lunch",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter @lunch/web dev\" \"pnpm --filter @lunch/api start:dev\"",
+    "build": "pnpm --filter @lunch/shared build && pnpm --filter @lunch/api build && pnpm --filter @lunch/api-client build && pnpm --filter @lunch/web build",
+    "lint": "pnpm -r lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=20"
+  }
+}
