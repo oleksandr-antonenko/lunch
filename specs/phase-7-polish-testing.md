@@ -119,7 +119,7 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.10 Database
 
-- [ ] Add database indexes:
+- [x] Add database indexes:
   - `Order.organizerId`
   - `Order.status`
   - `OrderItem.orderId`
@@ -127,8 +127,8 @@ Goal: Harden the app — error handling, validations, tests, and production read
   - `Debt.fromUserId`, `Debt.toUserId`
   - `Expense.status`, `Expense.claimedById`
   - `PaymentProof.fromUserId`, `PaymentProof.status`
-- [ ] Verify no N+1 queries in list endpoints (use Prisma `include` properly)
-- [ ] Add `@@index` directives in Prisma schema
+- [x] Verify no N+1 queries in list endpoints (use Prisma `include` properly)
+- [x] Add `@@index` directives in Prisma schema
 
 ## 7.11 Production Checklist
 

@@ -127,6 +127,9 @@ model Order {
   items         OrderItem[]
   paymentProofs PaymentProof[]
   debts         Debt[]
+
+  @@index([organizerId])
+  @@index([status])
 }
 
 // ── OrderItem ──────────────────────────────────────────
@@ -142,6 +145,9 @@ model OrderItem {
 
   order      Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
   assignedTo User? @relation("assignedTo", fields: [assignedToId], references: [id])
+
+  @@index([orderId])
+  @@index([assignedToId])
 }
 
 // ── Debt ───────────────────────────────────────────────
@@ -159,6 +165,9 @@ model Debt {
   fromUser User  @relation("debtor", fields: [fromUserId], references: [id])
   toUser   User  @relation("creditor", fields: [toUserId], references: [id])
   order    Order? @relation(fields: [orderId], references: [id])
+
+  @@index([fromUserId])
+  @@index([toUserId])
 }
 
 // ── PaymentProof ───────────────────────────────────────
@@ -178,6 +187,9 @@ model PaymentProof {
   toUser     User  @relation("proofTo", fields: [toUserId], references: [id])
   order      Order? @relation(fields: [orderId], references: [id])
   reviewedBy User? @relation("proofReviewer", fields: [reviewedById], references: [id])
+
+  @@index([fromUserId])
+  @@index([status])
 }
 
 // ── Expense ────────────────────────────────────────────
@@ -198,4 +210,7 @@ model Expense {
 
   createdBy User  @relation("expenseCreator", fields: [createdById], references: [id])
   claimedBy User? @relation("expenseClaimant", fields: [claimedById], references: [id])
+
+  @@index([status])
+  @@index([claimedById])
 }
