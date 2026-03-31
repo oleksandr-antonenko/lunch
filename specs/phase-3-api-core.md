@@ -154,8 +154,8 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
 
 ## 3.7 Dashboard Aggregation
 
-- [ ] Create `DashboardModule`, `DashboardController`, `DashboardService`
-- [ ] Endpoint:
+- [x] Create `DashboardModule`, `DashboardController`, `DashboardService`
+- [x] Endpoint:
   - `GET /api/dashboard` — aggregated dashboard data for current user
     - Returns:
       ```ts
@@ -168,7 +168,7 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
       }
       ```
     - Auth: any authenticated user
-- [ ] Swagger decorators
+- [x] Swagger decorators
 
 ## 3.8 OpenAPI Spec Export
 
