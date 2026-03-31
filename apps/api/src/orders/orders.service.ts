@@ -134,6 +134,18 @@ export class OrdersService {
     return { parsed, items };
   }
 
+  async reparse(orderId: string, userId: string) {
+    await this.ensureOrganizer(orderId, userId);
+
+    // Delete existing unassigned items
+    await this.prisma.orderItem.deleteMany({
+      where: { orderId, assignedToId: null },
+    });
+
+    // Re-run parsing
+    return this.parseReceipt(orderId, userId);
+  }
+
   async addItem(orderId: string, userId: string, dto: CreateOrderItemDto) {
     await this.ensureOrganizer(orderId, userId);
     return this.prisma.orderItem.create({

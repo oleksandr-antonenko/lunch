@@ -110,8 +110,8 @@ Goal: Implement AI-powered receipt parsing using Google Gemini 2.0 Flash vision 
 
 ## 4.5 Manual Fallback
 
-- [ ] Ensure `POST /api/orders/:id/items` (manual add) works independently
-- [ ] Add `POST /api/orders/:id/reparse` endpoint:
+- [x] Ensure `POST /api/orders/:id/items` (manual add) works independently
+- [x] Add `POST /api/orders/:id/reparse` endpoint:
   - Deletes existing unassigned items
   - Re-runs Gemini parsing
   - Auth: organizer only
