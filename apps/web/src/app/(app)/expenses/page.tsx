@@ -47,19 +47,15 @@ export default function ExpensesPage() {
 
   const isManager = session?.user && ['MANAGER', 'ADMIN'].includes((session.user as { role: string }).role);
 
-  const fetchExpenses = (status?: string) => {
-    setLoading(true);
-    const query: Record<string, string> = {};
-    if (status && status !== 'all') query.status = status;
-    api.expenses.list(query).then((res) => {
-      const data = res as { items: Expense[] };
-      setExpenses(data.items);
-      setLoading(false);
-    }).catch(() => setLoading(false));
-  };
-
   useEffect(() => {
-    fetchExpenses(tab === 'all' ? undefined : tab);
+    let cancelled = false;
+    const query: Record<string, string> = {};
+    if (tab !== 'all') query.status = tab;
+    api.expenses.list(query).then((res) => {
+      if (cancelled) return;
+      setExpenses((res as { items: Expense[] }).items);
+    }).finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
   }, [tab]);
 
   const handleCreate = async () => {

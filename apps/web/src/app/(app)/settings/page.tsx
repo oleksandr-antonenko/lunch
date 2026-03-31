@@ -29,7 +29,7 @@ interface User {
 export default function SettingsPage() {
   const { data: session } = useSession();
   const { theme, setTheme } = useTheme();
-  const [name, setName] = useState('');
+  const [name, setName] = useState(session?.user?.name ?? '');
   const [saving, setSaving] = useState(false);
   const [users, setUsers] = useState<User[]>([]);
   const [loadingUsers, setLoadingUsers] = useState(false);
@@ -38,19 +38,13 @@ export default function SettingsPage() {
   const isAdmin = userRole === 'ADMIN';
 
   useEffect(() => {
-    if (session?.user) {
-      setName(session.user.name);
-    }
-  }, [session]);
-
-  useEffect(() => {
-    if (isAdmin) {
-      setLoadingUsers(true);
-      api.users.list().then((u) => {
-        setUsers(u as User[]);
-        setLoadingUsers(false);
-      }).catch(() => setLoadingUsers(false));
-    }
+    if (!isAdmin) return;
+    let cancelled = false;
+    api.users.list().then((u) => {
+      if (cancelled) return;
+      setUsers(u as User[]);
+    }).finally(() => { if (!cancelled) setLoadingUsers(false); });
+    return () => { cancelled = true; };
   }, [isAdmin]);
 
   const handleSaveProfile = async () => {

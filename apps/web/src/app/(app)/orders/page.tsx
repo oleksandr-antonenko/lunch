@@ -49,19 +49,15 @@ export default function OrdersPage() {
   const [creating, setCreating] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
 
-  const fetchOrders = (status?: string) => {
-    setLoading(true);
-    const query: Record<string, string> = {};
-    if (status && status !== 'all') query.status = status;
-    api.orders.list(query).then((res) => {
-      const data = res as { items: Order[] };
-      setOrders(data.items);
-      setLoading(false);
-    }).catch(() => setLoading(false));
-  };
-
   useEffect(() => {
-    fetchOrders(tab === 'all' ? undefined : tab);
+    let cancelled = false;
+    const query: Record<string, string> = {};
+    if (tab !== 'all') query.status = tab;
+    api.orders.list(query).then((res) => {
+      if (cancelled) return;
+      setOrders((res as { items: Order[] }).items);
+    }).finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
   }, [tab]);
 
   const handleCreate = async () => {

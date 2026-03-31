@@ -190,15 +190,15 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ## 6.10 Verify Phase
 
-- [ ] Dashboard loads with all sections populated
-- [ ] Full order flow: create → upload receipt → parse → assign → finalize
-- [ ] Payment proof upload and review works
-- [ ] Expense flow: create → claim → receipt → reimburse
-- [ ] Debt balances update correctly after order finalization
-- [ ] Team ledger shows correct matrix (manager view)
-- [ ] Theme toggle works (light/dark/system)
-- [ ] All pages responsive on mobile
-- [ ] No `any` types in frontend code (ESLint passes)
-- [ ] Empty states display correctly
-- [ ] Loading skeletons appear during data fetching
-- [ ] Error states handled (toast notifications for failures)
+- [x] Dashboard loads with all sections populated
+- [x] Full order flow: create → upload receipt → parse → assign → finalize
+- [x] Payment proof upload and review works
+- [x] Expense flow: create → claim → receipt → reimburse
+- [x] Debt balances update correctly after order finalization
+- [x] Team ledger shows correct matrix (manager view)
+- [x] Theme toggle works (light/dark/system)
+- [x] All pages responsive on mobile
+- [x] No `any` types in frontend code (ESLint passes)
+- [x] Empty states display correctly
+- [x] Loading skeletons appear during data fetching
+- [x] Error states handled (toast notifications for failures)

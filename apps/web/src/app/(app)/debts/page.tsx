@@ -11,7 +11,7 @@ import { EmptyState } from '@web/components/shared/empty-state';
 import { Button } from '@web/components/ui/button';
 import { Input } from '@web/components/ui/input';
 import { Label } from '@web/components/ui/label';
-import { Card, CardContent, CardHeader, CardTitle } from '@web/components/ui/card';
+import { Card, CardContent } from '@web/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@web/components/ui/tabs';
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle,
