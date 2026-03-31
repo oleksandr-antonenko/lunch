@@ -43,8 +43,8 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
 
 ## 3.4 Orders Module
 
-- [ ] Create `OrdersModule`, `OrdersController`, `OrdersService`
-- [ ] Endpoints:
+- [x] Create `OrdersModule`, `OrdersController`, `OrdersService`
+- [x] Endpoints:
   - `POST /api/orders` — create new order
     - Body: `{ title: string }`
     - Sets organizer to current user, status OPEN
@@ -80,14 +80,14 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
     - Creates Debt records (CHARGE type) for each person → organizer
     - Changes status to CLOSED
     - Auth: organizer only
-- [ ] DTOs:
+- [x] DTOs:
   - `CreateOrderDto`: title (string, min 1)
   - `UpdateOrderDto`: title? (string), status? (enum)
   - `CreateOrderItemDto`: description (string), amountCents (int, min 0), quantity (int, min 1), assignedToId? (uuid)
   - `UpdateOrderItemDto`: description?, amountCents?, quantity?, assignedToId?
   - `OrderResponseDto`: full order with nested items
   - `PaginatedOrdersDto`: items[], total, page, limit
-- [ ] Swagger decorators on all endpoints
+- [x] Swagger decorators on all endpoints
 
 ## 3.5 Debts Module
 
