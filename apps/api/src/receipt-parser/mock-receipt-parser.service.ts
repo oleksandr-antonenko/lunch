@@ -3,6 +3,7 @@ import type { IReceiptParser, ParsedReceipt } from './receipt-parser.interface';
 
 @Injectable()
 export class MockReceiptParserService implements IReceiptParser {
+  // eslint-disable-next-line @typescript-eslint/require-await
   async parseReceipt(_imageUrl: string): Promise<ParsedReceipt> {
     return {
       items: [

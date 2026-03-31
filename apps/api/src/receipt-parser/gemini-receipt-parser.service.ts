@@ -55,13 +55,18 @@ export class GeminiReceiptParserService implements IReceiptParser {
         ]);
 
         const text = result.response.text();
-        const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-        const parsed = JSON.parse(cleaned);
+        const cleaned = text
+          .replace(/```json\n?/g, '')
+          .replace(/```\n?/g, '')
+          .trim();
+        const parsed: unknown = JSON.parse(cleaned);
         const validated = ParsedReceiptSchema.parse(parsed);
         return validated;
       } catch (error) {
         lastError = error as Error;
-        this.logger.warn(`Receipt parsing attempt ${attempt + 1} failed: ${lastError.message}`);
+        this.logger.warn(
+          `Receipt parsing attempt ${attempt + 1} failed: ${lastError.message}`,
+        );
 
         if (lastError.name === 'SyntaxError') {
           prompt = `${PROMPT}\n\nYour previous response was not valid JSON. Please return ONLY valid JSON, no markdown or extra text.`;

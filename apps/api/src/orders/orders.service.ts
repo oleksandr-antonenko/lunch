@@ -6,7 +6,10 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { RECEIPT_PARSER, type IReceiptParser } from '../receipt-parser/receipt-parser.interface';
+import {
+  RECEIPT_PARSER,
+  type IReceiptParser,
+} from '../receipt-parser/receipt-parser.interface';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
 import { CreateOrderItemDto } from './dto/create-order-item.dto';
@@ -77,11 +80,21 @@ export class OrdersService {
     return order;
   }
 
-  async update(id: string, userId: string, userRole: string, dto: UpdateOrderDto) {
+  async update(
+    id: string,
+    userId: string,
+    userRole: string,
+    dto: UpdateOrderDto,
+  ) {
     const order = await this.prisma.order.findUnique({ where: { id } });
     if (!order) throw new NotFoundException('Order not found');
-    if (order.organizerId !== userId && !['MANAGER', 'ADMIN'].includes(userRole)) {
-      throw new ForbiddenException('Only the organizer or managers can update this order');
+    if (
+      order.organizerId !== userId &&
+      !['MANAGER', 'ADMIN'].includes(userRole)
+    ) {
+      throw new ForbiddenException(
+        'Only the organizer or managers can update this order',
+      );
     }
     return this.prisma.order.update({
       where: { id },
@@ -112,7 +125,7 @@ export class OrdersService {
     await this.prisma.order.update({
       where: { id: orderId },
       data: {
-        rawReceiptData: JSON.parse(JSON.stringify(parsed)),
+        rawReceiptData: JSON.parse(JSON.stringify(parsed)) as object,
         totalAmountCents: parsed.totalAmountCents,
       },
     });
@@ -162,7 +175,12 @@ export class OrdersService {
     });
   }
 
-  async updateItem(orderId: string, itemId: string, userId: string, dto: UpdateOrderItemDto) {
+  async updateItem(
+    orderId: string,
+    itemId: string,
+    userId: string,
+    dto: UpdateOrderItemDto,
+  ) {
     await this.ensureOrganizer(orderId, userId);
     return this.prisma.orderItem.update({
       where: { id: itemId, orderId },
@@ -193,7 +211,9 @@ export class OrdersService {
 
     const unassigned = items.filter((item) => !item.assignedToId);
     if (unassigned.length > 0) {
-      throw new BadRequestException('All items must be assigned before finalizing');
+      throw new BadRequestException(
+        'All items must be assigned before finalizing',
+      );
     }
 
     // Group items by assignee and calculate totals
@@ -201,7 +221,10 @@ export class OrdersService {
     for (const item of items) {
       if (item.assignedToId === order.organizerId) continue; // organizer doesn't owe themselves
       const current = debtsByUser.get(item.assignedToId!) || 0;
-      debtsByUser.set(item.assignedToId!, current + item.amountCents * item.quantity);
+      debtsByUser.set(
+        item.assignedToId!,
+        current + item.amountCents * item.quantity,
+      );
     }
 
     const totalAmountCents = items.reduce(
@@ -210,14 +233,16 @@ export class OrdersService {
     );
 
     // Create debts and update order in a transaction
-    const debts = Array.from(debtsByUser.entries()).map(([fromUserId, amountCents]) => ({
-      fromUserId,
-      toUserId: order.organizerId,
-      amountCents,
-      orderId,
-      reason: `Lunch order: ${order.title}`,
-      type: 'CHARGE' as const,
-    }));
+    const debts = Array.from(debtsByUser.entries()).map(
+      ([fromUserId, amountCents]) => ({
+        fromUserId,
+        toUserId: order.organizerId,
+        amountCents,
+        orderId,
+        reason: `Lunch order: ${order.title}`,
+        type: 'CHARGE' as const,
+      }),
+    );
 
     await this.prisma.$transaction(async (tx) => {
       if (debts.length > 0) {
@@ -233,10 +258,14 @@ export class OrdersService {
   }
 
   private async ensureOrganizer(orderId: string, userId: string) {
-    const order = await this.prisma.order.findUnique({ where: { id: orderId } });
+    const order = await this.prisma.order.findUnique({
+      where: { id: orderId },
+    });
     if (!order) throw new NotFoundException('Order not found');
     if (order.organizerId !== userId) {
-      throw new ForbiddenException('Only the organizer can perform this action');
+      throw new ForbiddenException(
+        'Only the organizer can perform this action',
+      );
     }
     return order;
   }

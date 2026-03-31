@@ -124,11 +124,11 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
 
 ## 5.7 Verify Phase
 
-- [ ] `openapi.json` exports with all endpoints
-- [ ] Generator produces TypeScript files without errors
-- [ ] Generated client compiles with `tsc`
-- [ ] `createApiClient` factory works in browser
-- [ ] API calls from Next.js pages succeed with auth cookies
-- [ ] Server-side API calls forward cookies correctly
-- [ ] `no-explicit-any` lint rule passes on generated code (or generated code is excluded from lint)
-- [ ] Build pipeline runs in correct order
+- [x] `openapi.json` exports with all endpoints
+- [x] Generator produces TypeScript files without errors
+- [x] Generated client compiles with `tsc`
+- [x] `createApiClient` factory works in browser
+- [x] API calls from Next.js pages succeed with auth cookies
+- [x] Server-side API calls forward cookies correctly
+- [x] `no-explicit-any` lint rule passes on generated code (or generated code is excluded from lint)
+- [x] Build pipeline runs in correct order
