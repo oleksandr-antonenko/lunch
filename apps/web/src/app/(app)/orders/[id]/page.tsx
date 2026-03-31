@@ -250,10 +250,8 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
       {/* Finalize button */}
       {isOrganizer && order.status !== 'CLOSED' && order.items.length > 0 && (
         <AlertDialog>
-          <AlertDialogTrigger asChild>
-            <Button disabled={!allAssigned} className="w-full sm:w-auto">
-              Finalize Order
-            </Button>
+          <AlertDialogTrigger render={<Button disabled={!allAssigned} className="w-full sm:w-auto" />}>
+            Finalize Order
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader>

@@ -21,7 +21,7 @@ export function UserAvatar({
 
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
+      <TooltipTrigger>
         <Avatar className="h-7 w-7">
           {avatarUrl && <AvatarImage src={avatarUrl} alt={name} />}
           <AvatarFallback className="text-xs">{initials}</AvatarFallback>

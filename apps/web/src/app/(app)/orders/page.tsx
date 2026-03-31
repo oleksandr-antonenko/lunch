@@ -77,8 +77,8 @@ export default function OrdersPage() {
         description="Manage lunch orders"
         action={
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-            <DialogTrigger asChild>
-              <Button><Plus className="h-4 w-4 mr-2" />New Order</Button>
+            <DialogTrigger render={<Button />}>
+              <Plus className="h-4 w-4 mr-2" />New Order
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>

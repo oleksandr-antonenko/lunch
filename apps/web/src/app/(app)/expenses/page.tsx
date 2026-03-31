@@ -82,8 +82,8 @@ export default function ExpensesPage() {
         action={
           isManager ? (
             <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-              <DialogTrigger asChild>
-                <Button><Plus className="h-4 w-4 mr-2" />New Request</Button>
+              <DialogTrigger render={<Button />}>
+                <Plus className="h-4 w-4 mr-2" />New Request
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader><DialogTitle>Create Expense Request</DialogTitle></DialogHeader>
