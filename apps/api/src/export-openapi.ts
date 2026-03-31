@@ -14,12 +14,16 @@ async function exportOpenApi() {
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
-  const outputPath = join(__dirname, '..', 'openapi.json');
+  const outputPath = join(process.cwd(), 'openapi.json');
   writeFileSync(outputPath, JSON.stringify(document, null, 2));
 
   console.log(`OpenAPI spec written to ${outputPath}`);
   await app.close();
-  process.exit(0);
 }
 
-void exportOpenApi();
+exportOpenApi()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });

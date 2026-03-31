@@ -51,7 +51,7 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
 
 ## 5.3 Client Wrapper
 
-- [ ] Create `packages/api-client/src/index.ts`:
+- [x] Create `packages/api-client/src/index.ts`:
   - Re-export all generated APIs and models
   - Export a `createApiClient(basePath: string, fetchFn?: typeof fetch)` factory:
     ```ts
@@ -72,7 +72,7 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
       };
     }
     ```
-- [ ] Export types: `ApiClient` type from the factory return
+- [x] Export types: `ApiClient` type from the factory return
 
 ## 5.4 Frontend Integration
 
