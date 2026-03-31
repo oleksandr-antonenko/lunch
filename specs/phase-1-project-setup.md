@@ -70,17 +70,17 @@ Goal: Bootstrap the pnpm monorepo with all workspaces, tooling, and base configs
 
 ## 1.6 Shared Tooling
 
-- [ ] Install ESLint at root with `@typescript-eslint/eslint-plugin`
-- [ ] Configure `@typescript-eslint/no-explicit-any: "error"` in root ESLint config
-- [ ] Create `.eslintrc.js` (or `eslint.config.mjs`) at root
-- [ ] Create per-workspace ESLint configs extending root
-- [ ] Add root scripts:
+- [x] Install ESLint at root with `@typescript-eslint/eslint-plugin`
+- [x] Configure `@typescript-eslint/no-explicit-any: "error"` in root ESLint config
+- [x] Create `.eslintrc.js` (or `eslint.config.mjs`) at root
+- [x] Create per-workspace ESLint configs extending root
+- [x] Add root scripts:
   - `dev`: run `apps/web` and `apps/api` concurrently
   - `build`: build all packages then apps
   - `lint`: lint all workspaces
   - `format`: prettier all workspaces
-- [ ] Install `concurrently` for parallel dev script
-- [ ] Create `.env.example` with all required env vars documented:
+- [x] Install `concurrently` for parallel dev script
+- [x] Create `.env.example` with all required env vars documented:
   ```
   DATABASE_URL=postgresql://...
   GEMINI_API_KEY=...
