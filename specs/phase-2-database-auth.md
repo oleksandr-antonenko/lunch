@@ -154,10 +154,10 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
 
 ## 2.8 Verify Phase
 
-- [ ] Database migrations run cleanly
-- [ ] Seed data populates correctly
-- [ ] Sign up creates user in DB
-- [ ] Sign in returns valid session
-- [ ] Protected API routes return 401 without session
-- [ ] Protected API routes return data with valid session
-- [ ] Frontend redirects unauthenticated users
+- [x] Database migrations run cleanly
+- [x] Seed data populates correctly
+- [x] Sign up creates user in DB
+- [x] Sign in returns valid session
+- [x] Protected API routes return 401 without session
+- [x] Protected API routes return data with valid session
+- [x] Frontend redirects unauthenticated users

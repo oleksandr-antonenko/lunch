@@ -1,6 +1,5 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -44,12 +43,14 @@ enum ExpenseStatus {
 
 model User {
   id        String   @id @default(cuid())
-  email     String   @unique
-  name      String
-  avatarUrl String?
-  role      UserRole @default(MEMBER)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  email         String    @unique
+  name          String
+  emailVerified Boolean   @default(false)
+  image         String?
+  avatarUrl     String?
+  role          UserRole  @default(MEMBER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 
   // Relations
   orders           Order[]        @relation("organizer")
