@@ -82,16 +82,16 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.7 Frontend Testing
 
-- [ ] Setup Vitest + React Testing Library in `apps/web`
-- [ ] Component tests:
-  - [ ] `MoneyDisplay` — correct formatting
-  - [ ] `MoneyInput` — cent conversion, decimal handling
-  - [ ] `StatusBadge` — correct colors per status
-  - [ ] `ImageUpload` — file selection, preview display
-- [ ] Page tests (with mocked API):
-  - [ ] Dashboard — renders all sections
-  - [ ] Order detail — shows correct UI per status
-  - [ ] Debts page — shows balances correctly
+- [x] Setup Vitest + React Testing Library in `apps/web`
+- [x] Component tests:
+  - [x] `MoneyDisplay` — correct formatting
+  - [x] `MoneyInput` — cent conversion, decimal handling
+  - [x] `StatusBadge` — correct colors per status
+  - [x] `ImageUpload` — file selection, preview display
+- [x] Page tests (with mocked API):
+  - [x] Dashboard — renders all sections
+  - [x] Order detail — shows correct UI per status
+  - [x] Debts page — shows balances correctly
 
 ## 7.8 Linting & Type Safety
 
