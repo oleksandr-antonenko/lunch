@@ -40,20 +40,20 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ## 6.3 Dashboard Page (`/dashboard`)
 
-- [ ] Create `apps/web/src/app/(app)/dashboard/page.tsx`
-- [ ] Layout: responsive grid
+- [x] Create `apps/web/src/app/(app)/dashboard/page.tsx`
+- [x] Layout: responsive grid
   - 2 columns on desktop, 1 on mobile
-- [ ] Sections (each a Card):
+- [x] Sections (each a Card):
   - **Active Orders** — list of orders with status badges, click to view
   - **My Unpaid Items** — items assigned to me that aren't paid, with amounts
   - **My Debts** — net balance + per-person breakdown (green = they owe me, red = I owe)
   - **Open Expense Requests** — expenses with status OPEN, "Claim" button
   - **Pending Reimbursements** — expenses I claimed, awaiting reimbursement
-- [ ] Each section:
+- [x] Each section:
   - Shows up to 5 items with "View all" link
   - Loading skeleton while data fetches
   - Empty state when no items
-- [ ] Fetch data from `GET /api/dashboard` using api client
+- [x] Fetch data from `GET /api/dashboard` using api client
 
 ## 6.4 Orders Pages
 
