@@ -62,23 +62,23 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.6 Backend Testing
 
-- [ ] Setup test environment:
+- [x] Setup test environment:
   - Test database (separate PostgreSQL database or use `prisma-test-environment`)
   - Jest config in `apps/api`
   - `beforeAll`: run migrations, seed test data
   - `afterAll`: clean up
-- [ ] Unit tests (service layer):
-  - [ ] `OrdersService` — create, update, finalize logic, debt creation
-  - [ ] `DebtsService` — balance calculation, payment proof approval
-  - [ ] `ExpensesService` — state machine transitions
-  - [ ] `GeminiReceiptParserService` — Zod validation, retry logic (mock Gemini API)
-- [ ] Integration tests (controller layer):
-  - [ ] Auth flow: sign up → sign in → access protected route
-  - [ ] Order flow: create → upload receipt → parse → assign → finalize
-  - [ ] Debt flow: finalize order → check balances → submit proof → approve → check balances
-  - [ ] Expense flow: create → claim → receipt → reimburse
-  - [ ] Role guards: MEMBER can't create expenses, MANAGER can
-- [ ] Test coverage target: 80%+ for services
+- [x] Unit tests (service layer):
+  - [x] `OrdersService` — create, update, finalize logic, debt creation
+  - [x] `DebtsService` — balance calculation, payment proof approval
+  - [x] `ExpensesService` — state machine transitions
+  - [x] `GeminiReceiptParserService` — Zod validation, retry logic (mock Gemini API)
+- [x] Integration tests (controller layer):
+  - [x] Auth flow: sign up → sign in → access protected route
+  - [x] Order flow: create → upload receipt → parse → assign → finalize
+  - [x] Debt flow: finalize order → check balances → submit proof → approve → check balances
+  - [x] Expense flow: create → claim → receipt → reimburse
+  - [x] Role guards: MEMBER can't create expenses, MANAGER can
+- [x] Test coverage target: 80%+ for services
 
 ## 7.7 Frontend Testing
 
