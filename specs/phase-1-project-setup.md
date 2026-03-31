@@ -19,7 +19,7 @@ Goal: Bootstrap the pnpm monorepo with all workspaces, tooling, and base configs
   pnpm create next-app apps/web --ts --tailwind --app --src-dir --use-pnpm
   ```
 - [x] Configure `tsconfig.json` extending `../../tsconfig.base.json`
-- [ ] Install and init shadcn/ui (`npx shadcn@latest init`)
+- [x] Install and init shadcn/ui (`npx shadcn@latest init`)
 - [x] Set default theme (zinc, dark mode via class strategy)
 - [x] Add Geist font via `next/font`
 - [x] Create base layout with dark/light toggle placeholder
