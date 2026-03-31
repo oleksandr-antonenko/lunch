@@ -95,11 +95,11 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.8 Linting & Type Safety
 
-- [ ] `pnpm -w run lint` passes with zero warnings
-- [ ] No `any` types anywhere (including generated code — exclude or fix)
-- [ ] Add `packages/api-client/src/generated` to `.eslintignore` (generated code)
-- [ ] TypeScript strict mode in all tsconfigs
-- [ ] No unused imports or variables
+- [x] `pnpm -w run lint` passes with zero warnings
+- [x] No `any` types anywhere (including generated code — exclude or fix)
+- [x] Add `packages/api-client/src/generated` to `.eslintignore` (generated code)
+- [x] TypeScript strict mode in all tsconfigs
+- [x] No unused imports or variables
 
 ## 7.9 Environment & Configuration
 

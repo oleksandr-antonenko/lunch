@@ -71,7 +71,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
   useEffect(() => {
     fetchOrder();
     api.users.list().then((u) => setUsers(u as User[]));
-  }, [id]);
+  }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleUploadReceipt = async (file: File) => {
     setUploading(true);

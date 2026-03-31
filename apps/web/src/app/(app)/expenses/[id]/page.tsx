@@ -51,7 +51,7 @@ export default function ExpenseDetailPage({ params }: { params: Promise<{ id: st
     }).catch(() => setLoading(false));
   };
 
-  useEffect(() => { fetchExpense(); }, [id]);
+  useEffect(() => { fetchExpense(); }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleClaim = async () => {
     try {
