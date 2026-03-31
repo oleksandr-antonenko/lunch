@@ -98,7 +98,7 @@ export default function SettingsPage() {
         <CardContent>
           <div className="space-y-2">
             <Label>Theme</Label>
-            <Select value={theme} onValueChange={setTheme}>
+            <Select value={theme} onValueChange={(v) => v && setTheme(v)}>
               <SelectTrigger className="w-48">
                 <SelectValue />
               </SelectTrigger>
@@ -137,7 +137,7 @@ export default function SettingsPage() {
                         <TableCell>
                           <Select
                             value={user.role}
-                            onValueChange={(v) => handleRoleChange(user.id, v)}
+                            onValueChange={(v) => v && handleRoleChange(user.id, v)}
                           >
                             <SelectTrigger className="w-32">
                               <SelectValue />
