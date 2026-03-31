@@ -13,11 +13,11 @@ Goal: Design the full Prisma schema and set up better-auth for self-hosted authe
 
 ## 2.2 Docker Compose (Dev Database)
 
-- [ ] Create `docker-compose.yml` at repo root:
+- [x] Create `docker-compose.yml` at repo root:
   - PostgreSQL 16 service on port `5432`
   - Volume for data persistence
   - Default credentials: `lunch` / `lunch` / `lunch_db`
-- [ ] Add `db:up` and `db:down` scripts to root `package.json`
+- [x] Add `db:up` and `db:down` scripts to root `package.json`
 
 ## 2.3 Prisma Schema — Core Models
 

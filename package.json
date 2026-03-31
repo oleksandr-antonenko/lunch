@@ -5,7 +5,9 @@
     "dev": "concurrently \"pnpm --filter @lunch/web dev\" \"pnpm --filter @lunch/api start:dev\"",
     "build": "pnpm --filter @lunch/shared build && pnpm --filter @lunch/api build && pnpm --filter @lunch/api-client build && pnpm --filter @lunch/web build",
     "lint": "pnpm -r lint",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.58.0",
