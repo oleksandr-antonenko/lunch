@@ -160,14 +160,14 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ## 6.7 Settings Page (`/settings`)
 
-- [ ] Create `apps/web/src/app/(app)/settings/page.tsx`
-- [ ] Profile section:
+- [x] Create `apps/web/src/app/(app)/settings/page.tsx`
+- [x] Profile section:
   - Edit name
   - Upload avatar
   - View email (read-only)
-- [ ] Appearance section:
+- [x] Appearance section:
   - Theme selector (light/dark/system)
-- [ ] Admin section (visible to ADMIN only):
+- [x] Admin section (visible to ADMIN only):
   - User management table
   - Change user roles
 
