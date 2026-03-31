@@ -173,7 +173,7 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ## 6.8 Money Input Component
 
-- [ ] Create `MoneyInput` component:
+- [x] Create `MoneyInput` component:
   - Displays as EUR (e.g. "12.50")
   - Internally stores and emits cents (integer)
   - Handles comma and dot as decimal separator
