@@ -28,12 +28,12 @@ export function createApiClient(basePath: string, fetchFn?: typeof fetch) {
     });
 
     if (!res.ok) {
-      const error = await res.json().catch(() => ({ message: res.statusText }));
+      const error = await res.json().catch(() => ({ message: res.statusText })) as { message?: string };
       throw new ApiError(res.status, error.message ?? res.statusText);
     }
 
     const text = await res.text();
-    return text ? JSON.parse(text) : undefined;
+    return (text ? JSON.parse(text) : undefined) as T;
   }
 
   return {
