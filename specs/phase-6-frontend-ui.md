@@ -6,18 +6,18 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ## 6.1 Layout & Navigation
 
-- [ ] Create app shell layout (`apps/web/src/app/(app)/layout.tsx`):
+- [x] Create app shell layout (`apps/web/src/app/(app)/layout.tsx`):
   - Sidebar navigation (desktop) / bottom tab bar (mobile)
   - Top bar with user avatar, name, theme toggle
   - Navigation items: Dashboard, Orders, Expenses, Debts, Settings
   - Active route highlighting
-- [ ] Create `(auth)` route group for sign-in/sign-up (no sidebar)
-- [ ] Create `(app)` route group for authenticated pages (with sidebar)
-- [ ] Implement theme toggle:
+- [x] Create `(auth)` route group for sign-in/sign-up (no sidebar)
+- [x] Create `(app)` route group for authenticated pages (with sidebar)
+- [x] Implement theme toggle:
   - Use `next-themes` with class strategy
   - shadcn/ui `Button` with sun/moon icon
   - Persist preference in localStorage
-- [ ] Mobile-first: sidebar collapses to bottom tabs on screens < 768px
+- [x] Mobile-first: sidebar collapses to bottom tabs on screens < 768px
 
 ## 6.2 shadcn/ui Components to Install
 
