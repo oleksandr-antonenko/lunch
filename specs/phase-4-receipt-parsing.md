@@ -134,11 +134,11 @@ Goal: Implement AI-powered receipt parsing using Google Gemini 2.0 Flash vision 
 
 ## 4.7 Verify Phase
 
-- [ ] Mock parser returns valid data matching Zod schema
-- [ ] Gemini parser sends correct prompt with image
-- [ ] Zod validation catches malformed Gemini responses
-- [ ] Retry logic works (invalid JSON → retry → success)
-- [ ] Parsed items appear as OrderItems in database
-- [ ] Raw Gemini response stored in order.rawReceiptData
-- [ ] Re-parse endpoint clears old items and creates new ones
-- [ ] DI token swap works (mock vs gemini based on env)
+- [x] Mock parser returns valid data matching Zod schema
+- [x] Gemini parser sends correct prompt with image
+- [x] Zod validation catches malformed Gemini responses
+- [x] Retry logic works (invalid JSON → retry → success)
+- [x] Parsed items appear as OrderItems in database
+- [x] Raw Gemini response stored in order.rawReceiptData
+- [x] Re-parse endpoint clears old items and creates new ones
+- [x] DI token swap works (mock vs gemini based on env)
