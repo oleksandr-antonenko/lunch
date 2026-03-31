@@ -14,16 +14,16 @@ Goal: Bootstrap the pnpm monorepo with all workspaces, tooling, and base configs
 
 ## 1.2 Apps — Next.js Frontend (`apps/web`)
 
-- [ ] Scaffold Next.js 15 app with App Router, TypeScript, Tailwind CSS
+- [x] Scaffold Next.js 15 app with App Router, TypeScript, Tailwind CSS
   ```bash
   pnpm create next-app apps/web --ts --tailwind --app --src-dir --use-pnpm
   ```
-- [ ] Configure `tsconfig.json` extending `../../tsconfig.base.json`
+- [x] Configure `tsconfig.json` extending `../../tsconfig.base.json`
 - [ ] Install and init shadcn/ui (`npx shadcn@latest init`)
-- [ ] Set default theme (zinc, dark mode via class strategy)
-- [ ] Add Geist font via `next/font`
-- [ ] Create base layout with dark/light toggle placeholder
-- [ ] Add path alias `@web/*` pointing to `src/*`
+- [x] Set default theme (zinc, dark mode via class strategy)
+- [x] Add Geist font via `next/font`
+- [x] Create base layout with dark/light toggle placeholder
+- [x] Add path alias `@web/*` pointing to `src/*`
 
 ## 1.3 Apps — NestJS Backend (`apps/api`)
 
