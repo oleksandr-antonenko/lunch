@@ -20,16 +20,16 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.2 Error Handling (Frontend)
 
-- [ ] Create `apps/web/src/app/(app)/error.tsx` — app-level error boundary
-- [ ] Create `apps/web/src/app/(app)/not-found.tsx` — 404 page
-- [ ] Create `useApiError` hook:
+- [x] Create `apps/web/src/app/(app)/error.tsx` — app-level error boundary
+- [x] Create `apps/web/src/app/(app)/not-found.tsx` — 404 page
+- [x] Create `useApiError` hook:
   - Catches API errors from generated client
   - Shows toast notification with user-friendly message
   - Handles 401 → redirect to sign-in
   - Handles 403 → "Insufficient permissions" toast
   - Handles 422 → show validation errors
   - Handles 500 → "Something went wrong" toast
-- [ ] Add toast provider to root layout (shadcn `Toaster`)
+- [x] Add toast provider to root layout (shadcn `Toaster`)
 
 ## 7.3 Input Validation Tightening
 
