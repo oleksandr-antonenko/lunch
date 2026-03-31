@@ -99,14 +99,14 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
 
 ## 2.4 Prisma Migrations
 
-- [ ] Run `npx prisma migrate dev --name init` to create initial migration
-- [ ] Verify all tables created in PostgreSQL
-- [ ] Run `npx prisma generate` to generate client
-- [ ] Create seed script (`prisma/seed.ts`):
+- [x] Run `npx prisma migrate dev --name init` to create initial migration
+- [x] Verify all tables created in PostgreSQL
+- [x] Run `npx prisma generate` to generate client
+- [x] Create seed script (`prisma/seed.ts`):
   - 5 test users (1 admin, 1 manager, 3 members)
   - 2 sample orders with items
   - Sample debts and expenses
-- [ ] Add `prisma.seed` config to `apps/api/package.json`
+- [x] Add `prisma.seed` config to `apps/api/package.json`
 
 ## 2.5 Authentication — better-auth
 
