@@ -34,7 +34,7 @@ export default function SettingsPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [loadingUsers, setLoadingUsers] = useState(false);
 
-  const userRole = (session?.user as User | undefined)?.role;
+  const userRole = (session?.user as unknown as User | undefined)?.role;
   const isAdmin = userRole === 'ADMIN';
 
   useEffect(() => {

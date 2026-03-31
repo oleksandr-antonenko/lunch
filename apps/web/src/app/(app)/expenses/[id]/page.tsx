@@ -38,7 +38,7 @@ export default function ExpenseDetailPage({ params }: { params: Promise<{ id: st
   const [submitting, setSubmitting] = useState(false);
 
   const userId = session?.user?.id;
-  const userRole = (session?.user as { role?: string } | undefined)?.role;
+  const userRole = (session?.user as unknown as { role?: string } | undefined)?.role;
   const isManager = userRole && ['MANAGER', 'ADMIN'].includes(userRole);
   const isClaimant = expense?.claimedBy?.id === userId;
 

@@ -45,7 +45,7 @@ export default function ExpensesPage() {
   const [amount, setAmount] = useState('');
   const [creating, setCreating] = useState(false);
 
-  const isManager = session?.user && ['MANAGER', 'ADMIN'].includes((session.user as { role: string }).role);
+  const isManager = session?.user && ['MANAGER', 'ADMIN'].includes((session.user as unknown as { role: string }).role);
 
   useEffect(() => {
     let cancelled = false;
