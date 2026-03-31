@@ -6,17 +6,17 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.1 Error Handling (Backend)
 
-- [ ] Create global exception filter (`AllExceptionsFilter`):
+- [x] Create global exception filter (`AllExceptionsFilter`):
   - Catches all exceptions
   - Returns consistent error shape: `{ statusCode, message, error, timestamp }`
   - Logs errors with context (request path, user id)
-- [ ] Create custom exceptions:
+- [x] Create custom exceptions:
   - `OrderNotFoundError`
   - `UnauthorizedOrderAccessError`
   - `InvalidOrderStateError` (e.g. can't finalize without items assigned)
   - `ReceiptParsingError`
-- [ ] Add NestJS `HttpException` mapping for all custom errors
-- [ ] Ensure 422 Unprocessable Entity for Zod validation failures from receipt parsing
+- [x] Add NestJS `HttpException` mapping for all custom errors
+- [x] Ensure 422 Unprocessable Entity for Zod validation failures from receipt parsing
 
 ## 7.2 Error Handling (Frontend)
 
