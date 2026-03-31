@@ -103,8 +103,8 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.9 Environment & Configuration
 
-- [ ] Create `.env.example` with all required variables documented
-- [ ] Create `apps/api/src/config/` module:
+- [x] Create `.env.example` with all required variables documented
+- [x] Create `apps/api/src/config/` module:
   - Validates all required env vars on startup
   - Typed config service (no raw `process.env` elsewhere)
   - Required vars:
@@ -114,7 +114,7 @@ Goal: Harden the app — error handling, validations, tests, and production read
     - `GEMINI_API_KEY`
     - `UPLOAD_DIR`
     - `FRONTEND_URL` (for CORS)
-- [ ] Create `apps/web/.env.local.example`:
+- [x] Create `apps/web/.env.local.example`:
   - `NEXT_PUBLIC_API_URL`
 
 ## 7.10 Database
