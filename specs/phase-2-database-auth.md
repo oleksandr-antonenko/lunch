@@ -23,7 +23,7 @@ Goal: Design the full Prisma schema and set up better-auth for self-hosted authe
 
 All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
 
-- [ ] **User** model:
+- [x] **User** model:
   - `id` (uuid, default cuid)
   - `email` (unique)
   - `name`
@@ -32,12 +32,12 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
   - `createdAt`, `updatedAt`
   - Relations: orders, orderItems, debtsOwed, debtsOwedTo, expenses, paymentProofs
 
-- [ ] **better-auth tables** (managed by better-auth, must exist in schema):
+- [x] **better-auth tables** (managed by better-auth, must exist in schema):
   - `Session` — id, userId, expiresAt, token, ipAddress, userAgent
   - `Account` — id, userId, accountId, providerId, accessToken, refreshToken, etc.
   - `Verification` — id, identifier, value, expiresAt
 
-- [ ] **Order** model (a lunch order event):
+- [x] **Order** model (a lunch order event):
   - `id` (uuid)
   - `title` (e.g. "Friday Pizza Order")
   - `organizerId` (FK → User)
@@ -48,7 +48,7 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
   - `createdAt`, `updatedAt`
   - Relations: items[], paymentProofs[]
 
-- [ ] **OrderItem** model (a line item on a receipt):
+- [x] **OrderItem** model (a line item on a receipt):
   - `id` (uuid)
   - `orderId` (FK → Order)
   - `assignedToId` (FK → User, optional until assigned)
@@ -58,7 +58,7 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
   - `createdAt`
   - Relations: order, assignedTo
 
-- [ ] **Debt** model (append-only ledger):
+- [x] **Debt** model (append-only ledger):
   - `id` (uuid)
   - `fromUserId` (FK → User — who owes)
   - `toUserId` (FK → User — who is owed)
@@ -69,7 +69,7 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
   - `createdAt`
   - Note: NEVER deleted. Payments create a PAYMENT entry that offsets the CHARGE.
 
-- [ ] **PaymentProof** model:
+- [x] **PaymentProof** model:
   - `id` (uuid)
   - `fromUserId` (FK → User — who paid)
   - `toUserId` (FK → User — who received)
@@ -80,7 +80,7 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
   - `reviewedById` (FK → User, optional)
   - `createdAt`
 
-- [ ] **Expense** model (office purchases):
+- [x] **Expense** model (office purchases):
   - `id` (uuid)
   - `title` (String — "Buy milk")
   - `description` (String, optional)
@@ -93,7 +93,7 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
   - `reimbursedAt` (DateTime, optional)
   - `createdAt`, `updatedAt`
 
-- [ ] **Enums** in Prisma schema:
+- [x] **Enums** in Prisma schema:
   - `UserRole`, `OrderStatus`, `PaymentStatus`, `ExpenseStatus`, `DebtType`, `PaymentProofStatus`
   - Keep in sync with `packages/shared` enums
 
