@@ -110,25 +110,25 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
 
 ## 2.5 Authentication — better-auth
 
-- [ ] Install better-auth in `apps/api`: `better-auth`
-- [ ] Install better-auth client in `apps/web`: `@better-auth/react` (or relevant client pkg)
-- [ ] Create `apps/api/src/auth/auth.ts` — better-auth server config:
+- [x] Install better-auth in `apps/api`: `better-auth`
+- [x] Install better-auth client in `apps/web`: `@better-auth/react` (or relevant client pkg)
+- [x] Create `apps/api/src/auth/auth.ts` — better-auth server config:
   - Database: Prisma adapter (use existing Prisma client)
   - Email + password provider
   - Session strategy: cookie-based (httpOnly, secure, sameSite)
   - Secret from `BETTER_AUTH_SECRET` env var
-- [ ] Create auth NestJS module (`AuthModule`):
+- [x] Create auth NestJS module (`AuthModule`):
   - Mount better-auth handler at `/api/auth/*` (catch-all route)
   - Middleware to extract session and attach `user` to request
-- [ ] Create `AuthGuard` (NestJS guard):
+- [x] Create `AuthGuard` (NestJS guard):
   - Reads session from request (cookie)
   - Validates session via better-auth
   - Attaches user to `request.user`
   - Returns 401 if no valid session
-- [ ] Create `RolesGuard` + `@Roles()` decorator:
+- [x] Create `RolesGuard` + `@Roles()` decorator:
   - Checks `request.user.role` against allowed roles
   - Returns 403 if insufficient role
-- [ ] Create `@CurrentUser()` param decorator to extract user from request
+- [x] Create `@CurrentUser()` param decorator to extract user from request
 
 ## 2.6 Auth — Frontend Client
 
