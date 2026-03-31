@@ -76,7 +76,7 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
 
 ## 5.4 Frontend Integration
 
-- [ ] Create `apps/web/src/lib/api.ts`:
+- [x] Create `apps/web/src/lib/api.ts`:
   ```ts
   import { createApiClient } from '@lunch/api-client';
 
@@ -84,10 +84,10 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
     process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001',
   );
   ```
-- [ ] Create `apps/web/src/lib/api-server.ts` (for server components):
+- [x] Create `apps/web/src/lib/api-server.ts` (for server components):
   - Same client but with cookie forwarding from request headers
   - Uses `cookies()` from `next/headers` to pass session cookie
-- [ ] Verify TypeScript autocomplete works for all API methods
+- [x] Verify TypeScript autocomplete works for all API methods
 
 ## 5.5 Build Pipeline Integration
 
