@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:16
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: lunch
+      POSTGRES_PASSWORD: lunch
+      POSTGRES_DB: lunch_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      DATABASE_URL: postgresql://lunch:lunch@postgres:5432/lunch_db
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+      BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:3001}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      RECEIPT_PARSER_PROVIDER: ${RECEIPT_PARSER_PROVIDER:-mock}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
+      UPLOAD_DIR: /app/uploads
+      PORT: "3001"
+    volumes:
+      - uploads:/app/uploads
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001/api}
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  uploads:

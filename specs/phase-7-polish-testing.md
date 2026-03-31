@@ -132,13 +132,13 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.11 Production Checklist
 
-- [ ] Dockerfile for `apps/api` (multi-stage build)
-- [ ] Dockerfile for `apps/web` (standalone Next.js output)
-- [ ] `docker-compose.prod.yml` with all services
-- [ ] Health check endpoint: `GET /api/health`
-- [ ] Graceful shutdown handling in NestJS
-- [ ] Static file serving strategy for uploads (S3/Cloudflare R2 for prod, local for dev)
-- [ ] README.md with:
+- [x] Dockerfile for `apps/api` (multi-stage build)
+- [x] Dockerfile for `apps/web` (standalone Next.js output)
+- [x] `docker-compose.prod.yml` with all services
+- [x] Health check endpoint: `GET /api/health`
+- [x] Graceful shutdown handling in NestJS
+- [x] Static file serving strategy for uploads (S3/Cloudflare R2 for prod, local for dev)
+- [x] README.md with:
   - Project description
   - Setup instructions
   - Architecture overview
