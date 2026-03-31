@@ -140,19 +140,19 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ### Expenses List (`/expenses`)
 
-- [ ] Create `apps/web/src/app/(app)/expenses/page.tsx`
-- [ ] Tab filters: All, Open, My Claims, Reimbursed
-- [ ] DataTable with columns: Title, Estimated, Actual, Status, Claimed By, Created By
-- [ ] "New Request" button (Manager/Admin only) → create dialog
-- [ ] Create Expense Dialog:
+- [x] Create `apps/web/src/app/(app)/expenses/page.tsx`
+- [x] Tab filters: All, Open, My Claims, Reimbursed
+- [x] DataTable with columns: Title, Estimated, Actual, Status, Claimed By, Created By
+- [x] "New Request" button (Manager/Admin only) → create dialog
+- [x] Create Expense Dialog:
   - Title, description (optional), estimated amount (EUR input → converts to cents)
   - Submit → `POST /api/expenses`
 
 ### Expense Detail (`/expenses/[id]`)
 
-- [ ] Create `apps/web/src/app/(app)/expenses/[id]/page.tsx`
-- [ ] Status flow stepper: `OPEN → CLAIMED → RECEIPT_UPLOADED → REIMBURSED`
-- [ ] Actions based on status:
+- [x] Create `apps/web/src/app/(app)/expenses/[id]/page.tsx`
+- [x] Status flow stepper: `OPEN → CLAIMED → RECEIPT_UPLOADED → REIMBURSED`
+- [x] Actions based on status:
   - OPEN: "Claim This" button (any member)
   - CLAIMED: "Upload Receipt" (claimant only) with actual amount input
   - RECEIPT_UPLOADED: receipt preview, "Mark Reimbursed" button (manager only)
