@@ -6,13 +6,13 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
 
 ## 5.1 OpenAPI Spec Export Script
 
-- [ ] Finalize `apps/api/src/export-openapi.ts`:
+- [x] Finalize `apps/api/src/export-openapi.ts`:
   - Bootstrap NestJS app (without listening)
   - Extract SwaggerModule document
   - Write JSON to `apps/api/openapi.json`
   - Exit process
-- [ ] Add script: `"openapi:export": "npx ts-node -r tsconfig-paths/register src/export-openapi.ts"`
-- [ ] Verify exported `openapi.json` is valid (test with Swagger Editor or validator)
+- [x] Add script: `"openapi:export": "npx ts-node -r tsconfig-paths/register src/export-openapi.ts"`
+- [x] Verify exported `openapi.json` is valid (test with Swagger Editor or validator)
 
 ## 5.2 Generator Configuration
 
