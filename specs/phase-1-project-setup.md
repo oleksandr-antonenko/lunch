@@ -27,21 +27,21 @@ Goal: Bootstrap the pnpm monorepo with all workspaces, tooling, and base configs
 
 ## 1.3 Apps — NestJS Backend (`apps/api`)
 
-- [ ] Scaffold NestJS project:
+- [x] Scaffold NestJS project:
   ```bash
   pnpm create nest apps/api --package-manager pnpm --strict
   ```
-- [ ] Configure `tsconfig.json` extending `../../tsconfig.base.json`
-- [ ] Install Swagger: `@nestjs/swagger`
-- [ ] Install class-validator, class-transformer
-- [ ] Configure Swagger in `main.ts`:
+- [x] Configure `tsconfig.json` extending `../../tsconfig.base.json`
+- [x] Install Swagger: `@nestjs/swagger`
+- [x] Install class-validator, class-transformer
+- [x] Configure Swagger in `main.ts`:
   - Title: "Office Lunch Tracker API"
   - Version: "1.0"
   - Output OpenAPI JSON at `/api/docs-json`
   - Swagger UI at `/api/docs`
-- [ ] Add CORS config (allow `localhost:3000` in dev)
-- [ ] Add global validation pipe with `whitelist: true, transform: true`
-- [ ] Add path alias `@api/*` pointing to `src/*`
+- [x] Add CORS config (allow `localhost:3000` in dev)
+- [x] Add global validation pipe with `whitelist: true, transform: true`
+- [x] Add path alias `@api/*` pointing to `src/*`
 
 ## 1.4 Packages — Shared (`packages/shared`)
 
