@@ -118,11 +118,11 @@ Goal: Implement AI-powered receipt parsing using Google Gemini 2.0 Flash vision 
 
 ## 4.6 Mock Parser for Testing
 
-- [ ] Create `MockReceiptParserService` implementing `IReceiptParser`:
+- [x] Create `MockReceiptParserService` implementing `IReceiptParser`:
   - Returns hardcoded receipt data
   - Useful for tests and development without Gemini API key
-- [ ] Allow swapping via env var: `RECEIPT_PARSER_PROVIDER=gemini|mock`
-- [ ] Wire in module:
+- [x] Allow swapping via env var: `RECEIPT_PARSER_PROVIDER=gemini|mock`
+- [x] Wire in module:
   ```ts
   providers: [{
     provide: RECEIPT_PARSER,
