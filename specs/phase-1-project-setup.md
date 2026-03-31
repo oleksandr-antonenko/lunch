@@ -58,15 +58,15 @@ Goal: Bootstrap the pnpm monorepo with all workspaces, tooling, and base configs
 
 ## 1.5 Packages — API Client (`packages/api-client`)
 
-- [ ] Create `package.json` with name `@lunch/api-client`
-- [ ] Install `openapi-generator-cli` as devDependency
-- [ ] Create `openapitools.json` config:
+- [x] Create `package.json` with name `@lunch/api-client`
+- [x] Install `openapi-generator-cli` as devDependency
+- [x] Create `openapitools.json` config:
   - Generator: `typescript-fetch`
   - Input: `apps/api/openapi.json` (exported spec)
   - Output: `packages/api-client/src/generated`
-- [ ] Add `generate` script: fetches spec from running API and generates client
-- [ ] Add `prebuild` script in `apps/web` that runs api-client generation
-- [ ] Create `src/index.ts` barrel re-exporting generated client
+- [x] Add `generate` script: fetches spec from running API and generates client
+- [x] Add `prebuild` script in `apps/web` that runs api-client generation
+- [x] Create `src/index.ts` barrel re-exporting generated client
 
 ## 1.6 Shared Tooling
 

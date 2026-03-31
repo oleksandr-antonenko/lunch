@@ -1,0 +1,2 @@
+# Prevent overwriting custom files
+src/index.ts

@@ -3,3 +3,5 @@ dist
 .env*.local
 .next
 .turbo
+packages/api-client/src/generated/
+apps/api/openapi.json
