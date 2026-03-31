@@ -132,12 +132,12 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
 
 ## 2.6 Auth — Frontend Client
 
-- [ ] Create `apps/web/src/lib/auth-client.ts`:
+- [x] Create `apps/web/src/lib/auth-client.ts`:
   - Initialize better-auth client pointing to API URL
   - Export typed `signIn`, `signUp`, `signOut`, `useSession` hooks
-- [ ] Create `apps/web/src/components/providers/auth-provider.tsx`:
+- [x] Create `apps/web/src/components/providers/auth-provider.tsx`:
   - Wraps app with session provider
-- [ ] Add auth provider to root layout
+- [x] Add auth provider to root layout
 
 ## 2.7 Auth — Pages (Basic)
 
