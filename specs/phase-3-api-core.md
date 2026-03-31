@@ -184,10 +184,10 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
 
 ## 3.9 Verify Phase
 
-- [ ] All endpoints reachable and return correct status codes
-- [ ] Swagger UI shows all endpoints with correct schemas
-- [ ] Pagination works correctly
-- [ ] Auth guards enforce access control
-- [ ] Role-based access works (MEMBER vs MANAGER vs ADMIN)
-- [ ] OpenAPI spec exports cleanly
-- [ ] DTOs validate input (reject invalid data with 400)
+- [x] All endpoints reachable and return correct status codes
+- [x] Swagger UI shows all endpoints with correct schemas
+- [x] Pagination works correctly
+- [x] Auth guards enforce access control
+- [x] Role-based access works (MEMBER vs MANAGER vs ADMIN)
+- [x] OpenAPI spec exports cleanly
+- [x] DTOs validate input (reject invalid data with 400)
