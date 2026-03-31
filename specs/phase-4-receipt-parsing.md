@@ -6,7 +6,7 @@ Goal: Implement AI-powered receipt parsing using Google Gemini 2.0 Flash vision 
 
 ## 4.1 Receipt Parser Interface
 
-- [ ] Create `IReceiptParser` interface in `apps/api/src/receipt-parser/`:
+- [x] Create `IReceiptParser` interface in `apps/api/src/receipt-parser/`:
   ```ts
   interface ParsedReceiptItem {
     description: string;
@@ -26,8 +26,8 @@ Goal: Implement AI-powered receipt parsing using Google Gemini 2.0 Flash vision 
     parseReceipt(imageUrl: string): Promise<ParsedReceipt>;
   }
   ```
-- [ ] Create DI token: `RECEIPT_PARSER` (injection token for swappability)
-- [ ] Add `ParsedReceipt` and `ParsedReceiptItem` Zod schemas in `packages/shared`:
+- [x] Create DI token: `RECEIPT_PARSER` (injection token for swappability)
+- [x] Add `ParsedReceipt` and `ParsedReceiptItem` Zod schemas in `packages/shared`:
   ```ts
   const ParsedReceiptItemSchema = z.object({
     description: z.string().min(1),
