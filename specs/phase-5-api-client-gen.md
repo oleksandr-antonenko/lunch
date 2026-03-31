@@ -91,20 +91,20 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
 
 ## 5.5 Build Pipeline Integration
 
-- [ ] Add to `apps/api/package.json`:
+- [x] Add to `apps/api/package.json`:
   ```json
   "prebuild": "pnpm run openapi:export"
   ```
-- [ ] Add to `packages/api-client/package.json`:
+- [x] Add to `packages/api-client/package.json`:
   ```json
   "prebuild": "pnpm run generate"
   ```
-- [ ] Add to root `package.json` build order:
+- [x] Add to root `package.json` build order:
   1. Build `packages/shared`
   2. Build `apps/api` (triggers OpenAPI export)
   3. Build `packages/api-client` (triggers generation from exported spec)
   4. Build `apps/web`
-- [ ] Add generated files to `.gitignore`:
+- [x] Add generated files to `.gitignore`:
   ```
   packages/api-client/src/generated/
   apps/api/openapi.json
