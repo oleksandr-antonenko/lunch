@@ -147,11 +147,11 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.12 Verify Phase
 
-- [ ] All backend tests pass
-- [ ] All frontend tests pass
-- [ ] Lint passes with zero errors/warnings
-- [ ] App runs from Docker Compose
-- [ ] Full E2E flow works:
+- [x] All backend tests pass
+- [x] All frontend tests pass
+- [x] Lint passes with zero errors/warnings
+- [x] App runs from Docker Compose
+- [x] Full E2E flow works:
   1. Sign up two users
   2. User A creates order, uploads receipt
   3. AI parses receipt into items
