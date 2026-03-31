@@ -172,15 +172,15 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
 
 ## 3.8 OpenAPI Spec Export
 
-- [ ] Add script to `apps/api/package.json`:
+- [x] Add script to `apps/api/package.json`:
   ```json
   "openapi:export": "ts-node src/export-openapi.ts"
   ```
-- [ ] Create `src/export-openapi.ts`:
+- [x] Create `src/export-openapi.ts`:
   - Bootstraps NestJS app
   - Extracts Swagger document
   - Writes to `openapi.json` at project root
-- [ ] Verify exported spec is valid OpenAPI 3.0
+- [x] Verify exported spec is valid OpenAPI 3.0
 
 ## 3.9 Verify Phase
 
