@@ -25,8 +25,8 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
 
 ## 3.3 Users Module
 
-- [ ] Create `UsersModule`, `UsersController`, `UsersService`
-- [ ] Endpoints:
+- [x] Create `UsersModule`, `UsersController`, `UsersService`
+- [x] Endpoints:
   - `GET /api/users` — list all users (for assignment dropdowns)
     - Returns: `{ id, name, email, avatarUrl, role }[]`
     - Auth: any authenticated user
@@ -36,10 +36,10 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
     - Auth: `AuthGuard`
   - `PATCH /api/users/:id/role` — change user role
     - Auth: `RolesGuard(ADMIN)`
-- [ ] DTOs with class-validator:
+- [x] DTOs with class-validator:
   - `UpdateProfileDto`: name (optional string), avatarUrl (optional string)
   - `UpdateRoleDto`: role (enum UserRole)
-- [ ] Swagger decorators on all endpoints (`@ApiTags`, `@ApiOperation`, `@ApiResponse`)
+- [x] Swagger decorators on all endpoints (`@ApiTags`, `@ApiOperation`, `@ApiResponse`)
 
 ## 3.4 Orders Module
 
