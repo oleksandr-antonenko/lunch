@@ -6,9 +6,9 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
 
 ## 3.1 Prisma Service
 
-- [ ] Create `PrismaService` extending `PrismaClient` with `onModuleInit`/`onModuleDestroy`
-- [ ] Create `PrismaModule` (global) exporting `PrismaService`
-- [ ] Register as global module so all other modules can inject it
+- [x] Create `PrismaService` extending `PrismaClient` with `onModuleInit`/`onModuleDestroy`
+- [x] Create `PrismaModule` (global) exporting `PrismaService`
+- [x] Register as global module so all other modules can inject it
 
 ## 3.2 File Upload Infrastructure
 
