@@ -1,10 +1,12 @@
 import {
   Injectable,
+  Inject,
   NotFoundException,
   ForbiddenException,
   BadRequestException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { RECEIPT_PARSER, type IReceiptParser } from '../receipt-parser/receipt-parser.interface';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
 import { CreateOrderItemDto } from './dto/create-order-item.dto';
@@ -12,7 +14,10 @@ import { UpdateOrderItemDto } from './dto/update-order-item.dto';
 
 @Injectable()
 export class OrdersService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    @Inject(RECEIPT_PARSER) private receiptParser: IReceiptParser,
+  ) {}
 
   async create(userId: string, dto: CreateOrderDto) {
     return this.prisma.order.create({

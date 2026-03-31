@@ -89,11 +89,11 @@ Goal: Implement AI-powered receipt parsing using Google Gemini 2.0 Flash vision 
 
 ## 4.3 Receipt Parser Module
 
-- [ ] Create `ReceiptParserModule`:
+- [x] Create `ReceiptParserModule`:
   - Provides `RECEIPT_PARSER` token with `GeminiReceiptParserService`
   - Exports the token for other modules to use
-- [ ] Register in `OrdersModule` imports
-- [ ] Inject `RECEIPT_PARSER` in `OrdersService` for the parse-receipt endpoint
+- [x] Register in `OrdersModule` imports
+- [x] Inject `RECEIPT_PARSER` in `OrdersService` for the parse-receipt endpoint
 
 ## 4.4 Integration with Orders
 
