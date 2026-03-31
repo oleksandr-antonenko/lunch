@@ -45,16 +45,16 @@ Goal: Bootstrap the pnpm monorepo with all workspaces, tooling, and base configs
 
 ## 1.4 Packages — Shared (`packages/shared`)
 
-- [ ] Create `package.json` with name `@lunch/shared`
-- [ ] Create `tsconfig.json` extending base
-- [ ] Create `src/index.ts` as barrel export
-- [ ] Create `src/enums/` directory with placeholder enums:
+- [x] Create `package.json` with name `@lunch/shared`
+- [x] Create `tsconfig.json` extending base
+- [x] Create `src/index.ts` as barrel export
+- [x] Create `src/enums/` directory with placeholder enums:
   - `OrderStatus`: `OPEN`, `RECEIPT_UPLOADED`, `ITEMS_ASSIGNED`, `CLOSED`
   - `PaymentStatus`: `PENDING`, `PAID`, `DEFERRED`
   - `ExpenseStatus`: `OPEN`, `CLAIMED`, `RECEIPT_UPLOADED`, `REIMBURSED`
   - `UserRole`: `MEMBER`, `MANAGER`, `ADMIN`
-- [ ] Create `src/schemas/` directory for shared Zod schemas (receipt parsing output)
-- [ ] Install `zod` as dependency
+- [x] Create `src/schemas/` directory for shared Zod schemas (receipt parsing output)
+- [x] Install `zod` as dependency
 
 ## 1.5 Packages — API Client (`packages/api-client`)
 
