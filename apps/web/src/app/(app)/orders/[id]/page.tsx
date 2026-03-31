@@ -211,7 +211,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                         ) : isOrganizer ? (
                           <Select
                             value={item.assignedToId ?? ''}
-                            onValueChange={(v) => handleAssignItem(item.id, v)}
+                            onValueChange={(v) => v && handleAssignItem(item.id, v)}
                           >
                             <SelectTrigger className="w-32">
                               <SelectValue placeholder="Assign" />
