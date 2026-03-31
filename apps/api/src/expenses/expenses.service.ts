@@ -86,7 +86,11 @@ export class ExpensesService {
     });
   }
 
-  async uploadReceipt(id: string, userId: string, dto: UploadExpenseReceiptDto) {
+  async uploadReceipt(
+    id: string,
+    userId: string,
+    dto: UploadExpenseReceiptDto,
+  ) {
     const expense = await this.findById(id);
     if (expense.claimedById !== userId) {
       throw new ForbiddenException('Only the claimant can upload a receipt');
@@ -107,7 +111,9 @@ export class ExpensesService {
   async reimburse(id: string) {
     const expense = await this.findById(id);
     if (expense.status !== 'RECEIPT_UPLOADED') {
-      throw new BadRequestException('Expense must be in RECEIPT_UPLOADED status');
+      throw new BadRequestException(
+        'Expense must be in RECEIPT_UPLOADED status',
+      );
     }
     return this.prisma.expense.update({
       where: { id },

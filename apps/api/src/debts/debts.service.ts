@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException, ForbiddenException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  ForbiddenException,
+} from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreatePaymentProofDto } from './dto/create-payment-proof.dto';
 
@@ -19,17 +23,25 @@ export class DebtsService {
 
     let totalOwed = 0;
     let totalOwedToMe = 0;
-    const perUserMap = new Map<string, { userId: string; name: string; balance: number }>();
+    const perUserMap = new Map<
+      string,
+      { userId: string; name: string; balance: number }
+    >();
 
     for (const debt of debts) {
-      const amount = debt.type === 'CHARGE' ? debt.amountCents : -debt.amountCents;
+      const amount =
+        debt.type === 'CHARGE' ? debt.amountCents : -debt.amountCents;
 
       if (debt.fromUserId === userId) {
         // I owe someone
         totalOwed += debt.type === 'CHARGE' ? debt.amountCents : 0;
         totalOwedToMe += debt.type === 'PAYMENT' ? debt.amountCents : 0;
         const other = debt.toUser;
-        const entry = perUserMap.get(other.id) || { userId: other.id, name: other.name, balance: 0 };
+        const entry = perUserMap.get(other.id) || {
+          userId: other.id,
+          name: other.name,
+          balance: 0,
+        };
         entry.balance -= amount; // negative means I owe them
         perUserMap.set(other.id, entry);
       } else {
@@ -37,7 +49,11 @@ export class DebtsService {
         totalOwedToMe += debt.type === 'CHARGE' ? debt.amountCents : 0;
         totalOwed += debt.type === 'PAYMENT' ? debt.amountCents : 0;
         const other = debt.fromUser;
-        const entry = perUserMap.get(other.id) || { userId: other.id, name: other.name, balance: 0 };
+        const entry = perUserMap.get(other.id) || {
+          userId: other.id,
+          name: other.name,
+          balance: 0,
+        };
         entry.balance += amount; // positive means they owe me
         perUserMap.set(other.id, entry);
       }
@@ -66,10 +82,12 @@ export class DebtsService {
       users.set(debt.fromUser.id, debt.fromUser.name);
       users.set(debt.toUser.id, debt.toUser.name);
 
-      const amount = debt.type === 'CHARGE' ? debt.amountCents : -debt.amountCents;
+      const amount =
+        debt.type === 'CHARGE' ? debt.amountCents : -debt.amountCents;
 
       // fromUser owes toUser
-      if (!balances.has(debt.fromUserId)) balances.set(debt.fromUserId, new Map());
+      if (!balances.has(debt.fromUserId))
+        balances.set(debt.fromUserId, new Map());
       const fromMap = balances.get(debt.fromUserId)!;
       fromMap.set(debt.toUserId, (fromMap.get(debt.toUserId) || 0) + amount);
     }
@@ -84,13 +102,22 @@ export class DebtsService {
       })),
     );
 
-    return { users: Array.from(users.entries()).map(([id, name]) => ({ id, name })), matrix };
+    return {
+      users: Array.from(users.entries()).map(([id, name]) => ({ id, name })),
+      matrix,
+    };
   }
 
   async findAll(
     userId: string,
     userRole: string,
-    query: { fromUserId?: string; toUserId?: string; type?: string; page?: number; limit?: number },
+    query: {
+      fromUserId?: string;
+      toUserId?: string;
+      type?: string;
+      page?: number;
+      limit?: number;
+    },
   ) {
     const page = query.page || 1;
     const limit = query.limit || 20;
@@ -166,12 +193,19 @@ export class DebtsService {
     reviewerRole: string,
     status: string,
   ) {
-    const proof = await this.prisma.paymentProof.findUnique({ where: { id: proofId } });
+    const proof = await this.prisma.paymentProof.findUnique({
+      where: { id: proofId },
+    });
     if (!proof) throw new NotFoundException('Payment proof not found');
 
     // Only MANAGER/ADMIN or the recipient can review
-    if (!['MANAGER', 'ADMIN'].includes(reviewerRole) && proof.toUserId !== reviewerId) {
-      throw new ForbiddenException('Not authorized to review this payment proof');
+    if (
+      !['MANAGER', 'ADMIN'].includes(reviewerRole) &&
+      proof.toUserId !== reviewerId
+    ) {
+      throw new ForbiddenException(
+        'Not authorized to review this payment proof',
+      );
     }
 
     if (status === 'APPROVED') {

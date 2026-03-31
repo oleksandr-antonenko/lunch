@@ -33,15 +33,15 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.3 Input Validation Tightening
 
-- [ ] Audit all DTOs — ensure all fields have proper validators:
+- [x] Audit all DTOs — ensure all fields have proper validators:
   - Strings: `@IsString()`, `@MinLength()`, `@MaxLength()`
   - Numbers: `@IsInt()`, `@Min(0)` for money
   - UUIDs: `@IsUUID()`
   - Enums: `@IsEnum()`
   - Optional fields: `@IsOptional()`
-- [ ] Add rate limiting to receipt parsing endpoint (max 10/min per user)
-- [ ] Add file size validation on upload (frontend + backend)
-- [ ] Sanitize user-provided strings (strip HTML)
+- [x] Add rate limiting to receipt parsing endpoint (max 10/min per user)
+- [x] Add file size validation on upload (frontend + backend)
+- [x] Sanitize user-provided strings (strip HTML)
 
 ## 7.4 Optimistic UI Updates
 

@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ThrottlerModule } from '@nestjs/throttler';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
@@ -11,7 +12,17 @@ import { ExpensesModule } from './expenses/expenses.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 
 @Module({
-  imports: [PrismaModule, AuthModule, UploadModule, UsersModule, OrdersModule, DebtsModule, ExpensesModule, DashboardModule],
+  imports: [
+    ThrottlerModule.forRoot([{ ttl: 60000, limit: 60 }]),
+    PrismaModule,
+    AuthModule,
+    UploadModule,
+    UsersModule,
+    OrdersModule,
+    DebtsModule,
+    ExpensesModule,
+    DashboardModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

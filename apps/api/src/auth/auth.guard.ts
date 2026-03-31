@@ -9,7 +9,9 @@ import type { Request } from 'express';
 @Injectable()
 export class AuthGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
-    const request = context.switchToHttp().getRequest<Request & { user?: unknown }>();
+    const request = context
+      .switchToHttp()
+      .getRequest<Request & { user?: unknown }>();
     if (!request.user) {
       throw new UnauthorizedException('Authentication required');
     }

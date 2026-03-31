@@ -10,6 +10,7 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiQuery } from '@nestjs/swagger';
+import { Throttle } from '@nestjs/throttler';
 import { OrdersService } from './orders.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
@@ -88,6 +89,7 @@ export class OrdersController {
   }
 
   @Post(':id/parse-receipt')
+  @Throttle({ default: { limit: 10, ttl: 60000 } })
   @ApiOperation({ summary: 'Parse receipt with AI' })
   @ApiResponse({ status: 200, description: 'Receipt parsed and items created' })
   parseReceipt(@Param('id') id: string, @CurrentUser() user: AuthUser) {

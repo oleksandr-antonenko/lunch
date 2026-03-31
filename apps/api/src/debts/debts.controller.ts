@@ -104,6 +104,11 @@ export class DebtsController {
     @CurrentUser() user: AuthUser,
     @Body() dto: ReviewPaymentProofDto,
   ) {
-    return this.debtsService.reviewPaymentProof(id, user.id, user.role, dto.status);
+    return this.debtsService.reviewPaymentProof(
+      id,
+      user.id,
+      user.role,
+      dto.status,
+    );
   }
 }
