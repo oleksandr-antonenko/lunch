@@ -182,11 +182,11 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ## 6.9 Responsive Design
 
-- [ ] All pages work on mobile (375px+)
-- [ ] Tables switch to card layout on mobile
-- [ ] Dialogs become full-screen sheets on mobile
-- [ ] Touch-friendly tap targets (min 44px)
-- [ ] Image uploads work with camera capture on mobile
+- [x] All pages work on mobile (375px+)
+- [x] Tables switch to card layout on mobile
+- [x] Dialogs become full-screen sheets on mobile
+- [x] Touch-friendly tap targets (min 44px)
+- [x] Image uploads work with camera capture on mobile
 
 ## 6.10 Verify Phase
 
