@@ -45,10 +45,10 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.4 Optimistic UI Updates
 
-- [ ] Order item assignment — update UI immediately, rollback on failure
-- [ ] Payment proof submission — add to list immediately with "Pending" badge
-- [ ] Expense claim — button disabled immediately, "Claimed by you" shown
-- [ ] Use SWR or React Query for data fetching with optimistic mutations:
+- [x] Order item assignment — update UI immediately, rollback on failure
+- [x] Payment proof submission — add to list immediately with "Pending" badge
+- [x] Expense claim — button disabled immediately, "Claimed by you" shown
+- [x] Use SWR or React Query for data fetching with optimistic mutations:
   - Install `swr` or `@tanstack/react-query`
   - Create hooks: `useOrders`, `useOrder`, `useDebts`, `useExpenses`, `useDashboard`
   - Configure stale time, revalidation
