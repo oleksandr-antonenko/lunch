@@ -110,28 +110,28 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ### My Debts (`/debts`)
 
-- [ ] Create `apps/web/src/app/(app)/debts/page.tsx`
-- [ ] Top section: Net Balance Card
+- [x] Create `apps/web/src/app/(app)/debts/page.tsx`
+- [x] Top section: Net Balance Card
   - Large number showing net balance
   - Green if positive (people owe me), red if negative (I owe)
-- [ ] Per-person balance list:
+- [x] Per-person balance list:
   - UserAvatar + name + balance amount
   - "Pay" button → opens payment dialog
   - "View History" → expand to show individual debt entries
-- [ ] Payment Dialog:
+- [x] Payment Dialog:
   - Shows: paying [amount] to [user]
   - ImageUpload for payment screenshot
   - Amount input (pre-filled but editable)
   - Submit → `POST /api/debts/payment-proof`
-- [ ] Tab: "Payment Proofs" — list of submitted proofs with status
+- [x] Tab: "Payment Proofs" — list of submitted proofs with status
 
 ### Team Ledger (`/debts/team`) — Manager only
 
-- [ ] Create `apps/web/src/app/(app)/debts/team/page.tsx`
-- [ ] Matrix/grid view: rows = from user, columns = to user, cells = balance
-- [ ] Color-coded cells (red = owes, green = owed to)
-- [ ] Clicking a cell shows debt history for that pair
-- [ ] Pending payment proofs section:
+- [x] Create `apps/web/src/app/(app)/debts/team/page.tsx`
+- [x] Matrix/grid view: rows = from user, columns = to user, cells = balance
+- [x] Color-coded cells (red = owes, green = owed to)
+- [x] Clicking a cell shows debt history for that pair
+- [x] Pending payment proofs section:
   - List of proofs awaiting review
   - Approve/Reject buttons
   - Image preview on click
