@@ -91,8 +91,8 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
 
 ## 3.5 Debts Module
 
-- [ ] Create `DebtsModule`, `DebtsController`, `DebtsService`
-- [ ] Endpoints:
+- [x] Create `DebtsModule`, `DebtsController`, `DebtsService`
+- [x] Endpoints:
   - `GET /api/debts/my-balance` — current user's net balance
     - Calculates: sum of CHARGE debts (owed) minus sum of PAYMENT debts (paid)
     - Returns: `{ totalOwed, totalOwedToMe, netBalance, perUser: [{ userId, name, balance }] }`
@@ -114,13 +114,13 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
     - Body: `{ status: APPROVED | REJECTED }`
     - If APPROVED: creates Debt entry with type PAYMENT
     - Auth: `RolesGuard(MANAGER, ADMIN)` or the toUser
-- [ ] DTOs:
+- [x] DTOs:
   - `BalanceResponseDto`: totalOwed, totalOwedToMe, netBalance, perUser[]
   - `TeamLedgerResponseDto`: matrix of user-pair balances
   - `CreatePaymentProofDto`: toUserId, amountCents, imageUrl, orderId?
   - `ReviewPaymentProofDto`: status (APPROVED | REJECTED)
-- [ ] Swagger decorators on all endpoints
-- [ ] Service methods must be transactional where creating debt + updating proof status
+- [x] Swagger decorators on all endpoints
+- [x] Service methods must be transactional where creating debt + updating proof status
 
 ## 3.6 Expenses Module
 
