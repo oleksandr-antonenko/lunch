@@ -12,16 +12,16 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
 
 ## 3.2 File Upload Infrastructure
 
-- [ ] Install `@nestjs/platform-express` (multer)
-- [ ] Create `UploadModule` with file storage config:
+- [x] Install `@nestjs/platform-express` (multer)
+- [x] Create `UploadModule` with file storage config:
   - Local disk storage for dev (e.g. `uploads/` dir, served statically)
   - Max file size: 10MB
   - Allowed types: `image/jpeg`, `image/png`, `image/webp`
-- [ ] Create `UploadController`:
+- [x] Create `UploadController`:
   - `POST /api/uploads` — accepts multipart file, returns `{ url: string }`
   - Apply `AuthGuard`
-- [ ] Serve `uploads/` directory as static files in dev
-- [ ] Add `UPLOAD_DIR` env var
+- [x] Serve `uploads/` directory as static files in dev
+- [x] Add `UPLOAD_DIR` env var
 
 ## 3.3 Users Module
 
