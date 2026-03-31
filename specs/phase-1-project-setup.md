@@ -91,9 +91,9 @@ Goal: Bootstrap the pnpm monorepo with all workspaces, tooling, and base configs
 
 ## 1.7 Verify Setup
 
-- [ ] `pnpm install` succeeds from root
-- [ ] `pnpm -w run dev` starts both apps without errors
-- [ ] Next.js serves on `localhost:3000`
-- [ ] NestJS serves on `localhost:3001` with Swagger UI at `/api/docs`
-- [ ] `pnpm -w run lint` passes
-- [ ] Shared package is importable from both apps
+- [x] `pnpm install` succeeds from root
+- [x] `pnpm -w run dev` starts both apps without errors
+- [x] Next.js serves on `localhost:3000`
+- [x] NestJS serves on `localhost:3001` with Swagger UI at `/api/docs`
+- [x] `pnpm -w run lint` passes
+- [x] Shared package is importable from both apps
