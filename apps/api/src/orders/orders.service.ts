@@ -100,6 +100,40 @@ export class OrdersService {
     });
   }
 
+  async parseReceipt(orderId: string, userId: string) {
+    const order = await this.ensureOrganizer(orderId, userId);
+    if (!order.receiptImageUrl) {
+      throw new BadRequestException('Order does not have a receipt image');
+    }
+
+    const parsed = await this.receiptParser.parseReceipt(order.receiptImageUrl);
+
+    // Store raw response for audit
+    await this.prisma.order.update({
+      where: { id: orderId },
+      data: {
+        rawReceiptData: JSON.parse(JSON.stringify(parsed)),
+        totalAmountCents: parsed.totalAmountCents,
+      },
+    });
+
+    // Create OrderItem records from parsed items
+    const items = await Promise.all(
+      parsed.items.map((item) =>
+        this.prisma.orderItem.create({
+          data: {
+            orderId,
+            description: item.description,
+            amountCents: item.amountCents,
+            quantity: item.quantity,
+          },
+        }),
+      ),
+    );
+
+    return { parsed, items };
+  }
+
   async addItem(orderId: string, userId: string, dto: CreateOrderItemDto) {
     await this.ensureOrganizer(orderId, userId);
     return this.prisma.orderItem.create({

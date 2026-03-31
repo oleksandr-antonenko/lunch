@@ -87,6 +87,13 @@ export class OrdersController {
     return this.ordersService.uploadReceipt(id, user.id, dto.receiptImageUrl);
   }
 
+  @Post(':id/parse-receipt')
+  @ApiOperation({ summary: 'Parse receipt with AI' })
+  @ApiResponse({ status: 200, description: 'Receipt parsed and items created' })
+  parseReceipt(@Param('id') id: string, @CurrentUser() user: AuthUser) {
+    return this.ordersService.parseReceipt(id, user.id);
+  }
+
   @Post(':id/items')
   @ApiOperation({ summary: 'Add item to order' })
   @ApiResponse({ status: 201, description: 'Item added' })

@@ -97,14 +97,14 @@ Goal: Implement AI-powered receipt parsing using Google Gemini 2.0 Flash vision 
 
 ## 4.4 Integration with Orders
 
-- [ ] Update `POST /api/orders/:id/parse-receipt` implementation:
+- [x] Update `POST /api/orders/:id/parse-receipt` implementation:
   1. Verify order exists and has `receiptImageUrl`
   2. Call `receiptParser.parseReceipt(order.receiptImageUrl)`
   3. Store raw Gemini response in `order.rawReceiptData` (for audit)
   4. Create `OrderItem` records from parsed items
   5. Update `order.totalAmountCents` from parsed total
   6. Return parsed items for frontend to display
-- [ ] Handle partial failures:
+- [x] Handle partial failures:
   - If parsing succeeds but some items look wrong, still save all — organizer can edit
   - Store raw response so parsing can be re-evaluated later
 
