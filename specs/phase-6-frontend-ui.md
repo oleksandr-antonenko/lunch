@@ -21,14 +21,14 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ## 6.2 shadcn/ui Components to Install
 
-- [ ] Install required shadcn components:
+- [x] Install required shadcn components:
   ```bash
   npx shadcn@latest add button card input label badge table tabs
   npx shadcn@latest add dialog sheet dropdown-menu avatar separator
   npx shadcn@latest add form select textarea toast skeleton
   npx shadcn@latest add alert-dialog tooltip popover command
   ```
-- [ ] Create reusable composed components:
+- [x] Create reusable composed components:
   - `PageHeader` — title + description + optional action button
   - `DataTable` — generic table with sorting, pagination (wraps shadcn Table)
   - `EmptyState` — icon + message + optional CTA for empty lists
