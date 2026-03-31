@@ -124,8 +124,8 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
 
 ## 3.6 Expenses Module
 
-- [ ] Create `ExpensesModule`, `ExpensesController`, `ExpensesService`
-- [ ] Endpoints:
+- [x] Create `ExpensesModule`, `ExpensesController`, `ExpensesService`
+- [x] Endpoints:
   - `POST /api/expenses` — create expense request
     - Body: `{ title, description?, estimatedAmountCents }`
     - Auth: `RolesGuard(MANAGER, ADMIN)`
@@ -144,13 +144,13 @@ Goal: Build all NestJS REST endpoints with Swagger decorators, DTOs, and service
   - `POST /api/expenses/:id/reimburse` — mark as reimbursed
     - Sets status to REIMBURSED, sets `reimbursedAt`
     - Auth: `RolesGuard(MANAGER, ADMIN)`
-- [ ] DTOs:
+- [x] DTOs:
   - `CreateExpenseDto`: title (string), description? (string), estimatedAmountCents (int, min 0)
   - `ClaimExpenseDto`: (empty body, user from session)
   - `UploadExpenseReceiptDto`: receiptImageUrl (string, url), actualAmountCents (int, min 0)
   - `ExpenseResponseDto`: full expense with creator and claimant names
   - `PaginatedExpensesDto`: items[], total, page, limit
-- [ ] Swagger decorators on all endpoints
+- [x] Swagger decorators on all endpoints
 
 ## 3.7 Dashboard Aggregation
 
