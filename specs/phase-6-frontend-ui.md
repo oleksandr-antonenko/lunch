@@ -59,52 +59,52 @@ Goal: Build all frontend pages with shadcn/ui, mobile-first responsive design, l
 
 ### Orders List (`/orders`)
 
-- [ ] Create `apps/web/src/app/(app)/orders/page.tsx`
-- [ ] Tab filters: All, Open, Closed, My Orders
-- [ ] DataTable with columns: Title, Organizer, Date, Items, Total, Status
-- [ ] "New Order" button → opens create dialog
-- [ ] Create Order Dialog:
+- [x] Create `apps/web/src/app/(app)/orders/page.tsx`
+- [x] Tab filters: All, Open, Closed, My Orders
+- [x] DataTable with columns: Title, Organizer, Date, Items, Total, Status
+- [x] "New Order" button → opens create dialog
+- [x] Create Order Dialog:
   - Title input
   - Submit → `POST /api/orders`
   - Redirect to order detail on success
 
 ### Order Detail (`/orders/[id]`)
 
-- [ ] Create `apps/web/src/app/(app)/orders/[id]/page.tsx`
-- [ ] Status flow visualization (stepper):
+- [x] Create `apps/web/src/app/(app)/orders/[id]/page.tsx`
+- [x] Status flow visualization (stepper):
   ```
   OPEN → RECEIPT_UPLOADED → ITEMS_ASSIGNED → CLOSED
   ```
-- [ ] Sections based on status:
+- [x] Sections based on status:
 
 **When OPEN:**
-- [ ] Show "Upload Receipt" button → ImageUpload component
-- [ ] Upload flow: select image → `POST /api/uploads` → `POST /api/orders/:id/receipt`
+- [x] Show "Upload Receipt" button → ImageUpload component
+- [x] Upload flow: select image → `POST /api/uploads` → `POST /api/orders/:id/receipt`
 
 **When RECEIPT_UPLOADED:**
-- [ ] Show receipt image preview (zoomable)
-- [ ] "Parse Receipt" button → `POST /api/orders/:id/parse-receipt`
-- [ ] Show loading state during AI parsing
-- [ ] After parse: show extracted items table
+- [x] Show receipt image preview (zoomable)
+- [x] "Parse Receipt" button → `POST /api/orders/:id/parse-receipt`
+- [x] Show loading state during AI parsing
+- [x] After parse: show extracted items table
 
 **When items exist (RECEIPT_UPLOADED or ITEMS_ASSIGNED):**
-- [ ] Editable items table:
+- [x] Editable items table:
   - Description | Amount | Qty | Assigned To | Actions
   - Inline editing for description, amount
   - User dropdown for assignment (searchable select)
   - Delete button per item
   - "Add Item" button for manual additions
-- [ ] Running total at bottom
-- [ ] "Finalize Order" button (disabled until all items assigned)
+- [x] Running total at bottom
+- [x] "Finalize Order" button (disabled until all items assigned)
   - Confirmation dialog showing who owes what
   - On confirm → `POST /api/orders/:id/finalize`
 
 **When CLOSED:**
-- [ ] Read-only items table with assignments
-- [ ] Payment status per person:
+- [x] Read-only items table with assignments
+- [x] Payment status per person:
   - For each assignee: amount owed, payment status (paid/pending/deferred)
   - "Upload Payment Proof" button per person
-- [ ] Receipt image (view-only)
+- [x] Receipt image (view-only)
 
 ## 6.5 Debts Pages
 
