@@ -7,4 +7,9 @@ const authClient = createAuthClient({
 export const signIn = authClient.signIn;
 export const signUp = authClient.signUp;
 export const signOut = authClient.signOut;
-export const useSession = authClient.useSession;
+// @ts-expect-error -- better-auth type references non-portable module paths
+export const useSession: () => {
+  data: { user: { id: string; name: string; email: string; emailVerified: boolean; image?: string | null }; session: unknown } | null;
+  isPending: boolean;
+  error: unknown;
+} = authClient.useSession;
