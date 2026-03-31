@@ -16,7 +16,7 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
 
 ## 5.2 Generator Configuration
 
-- [ ] Configure `packages/api-client/openapitools.json`:
+- [x] Configure `packages/api-client/openapitools.json`:
   ```json
   {
     "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
@@ -39,7 +39,7 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
     }
   }
   ```
-- [ ] Add scripts to `packages/api-client/package.json`:
+- [x] Add scripts to `packages/api-client/package.json`:
   ```json
   {
     "generate": "openapi-generator-cli generate",
@@ -47,7 +47,7 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
     "build": "tsc"
   }
   ```
-- [ ] Add `.openapi-generator-ignore` to prevent overwriting custom files
+- [x] Add `.openapi-generator-ignore` to prevent overwriting custom files
 
 ## 5.3 Client Wrapper
 
