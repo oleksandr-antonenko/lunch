@@ -46,12 +46,12 @@ Goal: Implement AI-powered receipt parsing using Google Gemini 2.0 Flash vision 
 
 ## 4.2 Gemini Service Implementation
 
-- [ ] Install Google Generative AI SDK: `@google/generative-ai`
-- [ ] Create `GeminiReceiptParserService` implementing `IReceiptParser`:
+- [x] Install Google Generative AI SDK: `@google/generative-ai`
+- [x] Create `GeminiReceiptParserService` implementing `IReceiptParser`:
   - Reads `GEMINI_API_KEY` from env
   - Uses model `gemini-2.0-flash`
   - Sends image as inline data (base64) or file URL
-- [ ] Implement `parseReceipt(imageUrl: string)`:
+- [x] Implement `parseReceipt(imageUrl: string)`:
   1. Fetch image from URL (local upload path), convert to base64
   2. Construct prompt:
      ```
@@ -80,7 +80,7 @@ Goal: Implement AI-powered receipt parsing using Google Gemini 2.0 Flash vision 
   4. Validate with Zod `ParsedReceiptSchema`
   5. If validation fails, retry once with error feedback to Gemini
   6. Return validated `ParsedReceipt`
-- [ ] Handle errors:
+- [x] Handle errors:
   - Image fetch failure → throw specific error
   - Gemini API error → throw with original message
   - JSON parse failure → retry with "your response was not valid JSON"
