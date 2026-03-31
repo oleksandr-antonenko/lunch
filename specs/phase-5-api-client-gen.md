@@ -112,15 +112,15 @@ Goal: Auto-generate a typed TypeScript client from the OpenAPI spec and wire it 
 
 ## 5.6 Development Workflow Script
 
-- [ ] Create `scripts/regenerate-api-client.sh`:
+- [x] Create `scripts/regenerate-api-client.sh`:
   ```bash
   #!/bin/bash
   # Start API temporarily, export spec, generate client
   cd apps/api && pnpm run openapi:export
   cd ../../packages/api-client && pnpm run generate
   ```
-- [ ] Add root script: `"api:generate": "bash scripts/regenerate-api-client.sh"`
-- [ ] Document in README: run this after changing any API endpoint
+- [x] Add root script: `"api:generate": "bash scripts/regenerate-api-client.sh"`
+- [x] Document in README: run this after changing any API endpoint
 
 ## 5.7 Verify Phase
 
