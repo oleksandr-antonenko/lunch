@@ -37,7 +37,7 @@ export class GeminiReceiptParserService implements IReceiptParser {
 
   async parseReceipt(imageUrl: string): Promise<ParsedReceipt> {
     const imageData = this.loadImage(imageUrl);
-    const model = this.genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+    const model = this.genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
     let lastError: Error | null = null;
     let prompt = PROMPT;
