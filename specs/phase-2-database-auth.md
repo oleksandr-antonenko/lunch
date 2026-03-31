@@ -141,14 +141,14 @@ All money fields stored as `Int` (cents). All tables use `uuid` primary keys.
 
 ## 2.7 Auth — Pages (Basic)
 
-- [ ] Create `/sign-in` page:
+- [x] Create `/sign-in` page:
   - Email + password form
   - Link to sign-up
   - Redirect to dashboard on success
-- [ ] Create `/sign-up` page:
+- [x] Create `/sign-up` page:
   - Name, email, password form
   - Redirect to dashboard on success
-- [ ] Create auth middleware/guard on frontend:
+- [x] Create auth middleware/guard on frontend:
   - Protect all routes except `/sign-in`, `/sign-up`
   - Redirect unauthenticated users to `/sign-in`
 
