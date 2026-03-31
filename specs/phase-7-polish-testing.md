@@ -55,10 +55,10 @@ Goal: Harden the app — error handling, validations, tests, and production read
 
 ## 7.5 Real-Time Considerations (Optional Enhancement)
 
-- [ ] Decide: SSE or polling for live updates
-- [ ] Minimum: polling dashboard every 30s
-- [ ] Order detail page: poll every 10s when status is intermediate
-- [ ] Payment proof status: poll until approved/rejected
+- [x] Decide: SSE or polling for live updates
+- [x] Minimum: polling dashboard every 30s
+- [x] Order detail page: poll every 10s when status is intermediate
+- [x] Payment proof status: poll until approved/rejected
 
 ## 7.6 Backend Testing
 

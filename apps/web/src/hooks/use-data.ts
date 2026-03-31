@@ -12,6 +12,7 @@ export function useDashboard() {
   return useSWR('dashboard', fetcher(api.dashboard.get), {
     revalidateOnFocus: true,
     dedupingInterval: 10000,
+    refreshInterval: 30000,
   });
 }
 
@@ -23,10 +24,11 @@ export function useOrders(query?: Record<string, string>) {
   });
 }
 
-export function useOrder(id: string) {
+export function useOrder(id: string, polling = false) {
   return useSWR(`order-${id}`, () => api.orders.get(id), {
     revalidateOnFocus: true,
     dedupingInterval: 5000,
+    refreshInterval: polling ? 10000 : 0,
   });
 }
 
@@ -37,9 +39,10 @@ export function useDebtsBalance() {
   });
 }
 
-export function usePaymentProofs(query?: Record<string, string>) {
+export function usePaymentProofs(query?: Record<string, string>, polling = false) {
   return useSWR('payment-proofs', () => api.debts.listPaymentProofs(query), {
     revalidateOnFocus: true,
+    refreshInterval: polling ? 10000 : 0,
   });
 }
 
