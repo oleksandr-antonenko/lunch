@@ -6,10 +6,10 @@ Goal: Design the full Prisma schema and set up better-auth for self-hosted authe
 
 ## 2.1 Prisma Setup
 
-- [ ] Install Prisma in `apps/api`: `prisma`, `@prisma/client`
-- [ ] Run `npx prisma init` — creates `prisma/schema.prisma` and `.env`
-- [ ] Configure datasource for PostgreSQL
-- [ ] Set `DATABASE_URL` in `.env` (local Postgres or Docker Compose)
+- [x] Install Prisma in `apps/api`: `prisma`, `@prisma/client`
+- [x] Run `npx prisma init` — creates `prisma/schema.prisma` and `.env`
+- [x] Configure datasource for PostgreSQL
+- [x] Set `DATABASE_URL` in `.env` (local Postgres or Docker Compose)
 
 ## 2.2 Docker Compose (Dev Database)
 
